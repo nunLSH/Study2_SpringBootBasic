@@ -26,6 +26,7 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() { // 역할
-        return new FixDiscountPolicy(); // 구현
+//        return new FixDiscountPolicy(); // 구현
+        return new RateDiscountPolicy();
     }
 }
