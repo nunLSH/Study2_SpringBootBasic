@@ -27,4 +27,9 @@ public class OrderServiceImpl implements OrderService{
         // 3. 최종 생성된 Order(주문을) 반환
         return new Order(memberId, itemName, itemPrice, discountPrice);
     }
+
+    // 테스트 용도
+    public MemberRepository getMemberRepository() { // 역할
+        return memberRepository; // 구현
+    }
 }
