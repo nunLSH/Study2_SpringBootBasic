@@ -55,14 +55,16 @@ public class SingletonTest {
 
 //        AppConfig appConfig = new AppConfig();
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        //1. 조회: 호출할 때 마다 같은 객체를 반환
         MemberService memberService1 = ac.getBean("memberService", MemberService.class);
+        //2. 조회: 호출할 때 마다 같은 객체를 반환
         MemberService memberService2 = ac.getBean("memberService", MemberService.class);
 
         // 참조값이 다른 것을 확인
         System.out.println("memberService1 = " + memberService1);
         System.out.println("memberService2 = " + memberService2);
 
-        // memberService1 != memberService2
+        // memberService1 == memberService2
         assertThat(memberService1).isSameAs(memberService2);
     }
 }
