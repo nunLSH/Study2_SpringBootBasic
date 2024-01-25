@@ -13,7 +13,7 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
+    @Autowired // 아래처럼 생성자가 하나인 경우 @Autowired를 붙이지 않아도 자동으로 적용됨. (생략 가능)
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         // AppConfig에서 MemberRepository,DiscountPolicy의 구현체에 뭐가 들어갈지를 생성자를 통해서 선택
         // 생성자를 통해 외부(AppConfig)에서 주입된 매개변수들을 받아서 해당 클래스의 멤버 변수에 할당
